@@ -1,8 +1,8 @@
 async function generateMeme() {
-    const top = document.getElementById("top").value || "_";
-    const bottom = document.getElementById("bottom").value || "_";
+    const top = document.getElementById("topText").value || "_";
+    const bottom = document.getElementById("bottomText").value || "_";
     const template = document.getElementById("template").value;
-    const img = document.getElementById("meme");
+    const img = document.getElementById("memeImage");
     const errorBox = document.getElementById("error");
 
     try {
