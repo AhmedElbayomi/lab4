@@ -1,22 +1,16 @@
 async function generateMeme() {
-    const top = document.getElementById("topText").value.trim() || "_";
-    const bottom = document.getElementById("bottomText").value.trim() || "_";
+    const top = document.getElementById("top").value || "_";
+    const bottom = document.getElementById("bottom").value || "_";
     const template = document.getElementById("template").value;
+    const img = document.getElementById("meme");
     const errorBox = document.getElementById("error");
-    const img = document.getElementById("memeImage");
-
-    errorBox.textContent = "";
 
     try {
-        const res = await fetch(`/meme?template=${template}&top=${top}&bottom=${bottom}`);
-        const data = await res.json();
+        const url = `https://api.memegen.link/images/${template}/${top}/${bottom}.png`;
 
-        if (data.url) {
-            img.src = data.url;
-        } else {
-            errorBox.textContent = "Something went wrong.";
-        }
-    } catch {
+        img.src = url;
+        errorBox.textContent = "";
+    } catch (err) {
         errorBox.textContent = "Something went wrong.";
     }
 }
