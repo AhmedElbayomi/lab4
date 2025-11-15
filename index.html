@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Meme Generator</h1>
+
+    <div class="container">
+        <label>Top Text:</label>
+        <input id="topText" placeholder="Enter top text">
+
+        <label>Bottom Text:</label>
+        <input id="bottomText" placeholder="Enter bottom text">
+
+        <label>Select Template:</label>
+        <select id="template">
+            <option value="buzz">Buzz</option>
+            <option value="doge">Doge</option>
+            <option value="fry">Fry</option>
+            <option value="drake">Drake Hotline</option>
+            <option value="joker">Joker</option>
+        </select>
+
+        <button onclick="generateMeme()">Generate Meme</button>
+
+        <p id="error" class="error"></p>
+
+        <img id="memeImage" alt="Meme will appear here">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
